@@ -12,6 +12,8 @@ fun main() {
     boolean()
     numbers()
     nullable()
+    safeCalls()
+    elvisOp()
 }
 
 fun name() {
@@ -176,4 +178,15 @@ fun nullable() {
     } else {
         println("Text is null")
     }
+}
+
+fun safeCalls() {
+    val text: String? = null
+    println(text?.length)
+}
+
+fun elvisOp() {
+    val text: String? = null
+    val textLength = text?.length ?: 7
+    println(textLength)
 }
