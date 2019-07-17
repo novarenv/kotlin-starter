@@ -14,6 +14,7 @@ fun main() {
     nullable()
     safeCalls()
     elvisOp()
+    stringTemplate()
 }
 
 fun name() {
@@ -189,4 +190,15 @@ fun elvisOp() {
     val text: String? = null
     val textLength = text?.length ?: 7
     println(textLength)
+}
+
+fun stringTemplate() {
+    val hour = 7
+    println(
+        "Office ${if (hour > 7) {
+            "already close"
+        } else {
+            "is open"
+        }}"
+    )
 }
