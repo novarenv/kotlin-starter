@@ -9,6 +9,7 @@ fun main() {
     array()
     function("Novaren Veraldo", 19)
     ifExpression()
+    boolean()
 }
 
 fun name() {
@@ -101,20 +102,43 @@ fun array() {
     print("\n")
 }
 
-fun function(name:String, age: Int){
+fun function(name: String, age: Int) {
     println("Your name is $name and you are $age years old")
 }
 
-fun ifExpression(){
+fun ifExpression() {
     val openHours = 7
     val now = 20
     val office: String
-    office = if(now > openHours) {
+    office = if (now > openHours) {
         "Office already open"
-    } else if(now == openHours) {
+    } else if (now == openHours) {
         "Wait a minute, office will be open"
     } else {
         "Office is closed"
     }
     println(office)
+}
+
+fun boolean() {
+    val officeOpen = 7
+    val officeClose = 16
+    val now = 10
+
+    var isOpen = if (now >= officeOpen && now <= officeClose) {
+        true
+    } else {
+        false
+    }
+    println("Office is open: $isOpen")
+
+    isOpen = now < officeOpen || now > officeClose
+    println("Office is closed: $isOpen")
+
+    isOpen = now > officeOpen
+    if(!isOpen){
+        println("Office is closed")
+    } else{
+        print("Office is open")
+    }
 }
