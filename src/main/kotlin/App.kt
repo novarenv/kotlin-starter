@@ -1,4 +1,4 @@
-import java.lang.reflect.Array
+import kotlin.random.Random
 
 fun main() {
     name()
@@ -16,6 +16,7 @@ fun main() {
     elvisOp()
     stringTemplate()
     enum()
+    whenExpression()
 }
 
 fun name() {
@@ -232,3 +233,50 @@ fun enum() {
         Color.BLUE -> println("Color is Blue")
     }
 }
+
+fun whenExpression() {
+    val value = 7
+    val ranges = 10..50
+
+    val stringOfValue = when (value) {
+        6 -> {
+            println("Six")
+            "Value is 6"
+        }
+        7 -> {
+            println("Seven")
+            "Value is 7"
+        }
+        8 -> {
+            println("Eight")
+            "Value is 8"
+        }
+        else -> {
+            println("Undefined")
+            "Value cannot be reached"
+        }
+    }
+    println(stringOfValue)
+
+    val anyType: Any = 100L
+    when (anyType) {
+        is Long -> println("The value has a Long type")
+        is String -> println("The value has a String type")
+        else -> println("Undefined")
+    }
+
+    when (value) {
+        in ranges -> println("Value is in the range")
+        !in ranges -> println("Value is outside the range")
+        else -> println("Value is indefined")
+    }
+
+    val registerNumber = when (val regis = getRegisterNumber()) {
+        in 1..50 -> 50 * regis
+        in 51..100 -> 100 * regis
+        else -> regis
+    }
+    println(registerNumber)
+}
+
+fun getRegisterNumber() = Random.nextInt(100)
