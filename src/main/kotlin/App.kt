@@ -6,14 +6,14 @@ fun main() {
     string()
 }
 
-fun name(){
+fun name() {
     val name = "Varen"
 
     print("My Name is ")
     println(name)
 }
 
-fun valvar(){
+fun valvar() {
     var campus: String = "ITS"
     campus = "PENS"
     println("Kampus saya " + campus)
@@ -23,7 +23,7 @@ fun valvar(){
     //company = "PENS"
 }
 
-fun plus(){
+fun plus() {
     val firstWord = "Novaren"
     val lastWord = "Veraldo"
     println(firstWord + " " + lastWord)
@@ -33,7 +33,7 @@ fun plus(){
     println(valueA + valueB)
 }
 
-fun char(){
+fun char() {
     var huruf = 'A'
     println("Vocal " + huruf++)
     println("Vocal " + huruf++)
@@ -44,9 +44,28 @@ fun char(){
     println("Vocal " + huruf--)
 }
 
-fun string(){
+fun string() {
     val text = "Kotlin"
     val firstChar = text[0]
 
     println("First character of Kotlin is $firstChar")
+    for (char in text) {
+        print("$char ")
+    }
+    print("\n")
+
+    val statement = "Kotlin is \"Awesome!\""
+    println(statement)
+
+    val unicode = "Unicode test: \u0394"
+    println(unicode)
+
+    val lines = """
+        Line 1
+        Line 2
+        Line 3
+        Line 4
+    """.trimIndent()
+
+    println(lines)
 }
