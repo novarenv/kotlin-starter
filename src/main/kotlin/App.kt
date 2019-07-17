@@ -11,6 +11,7 @@ fun main() {
     ifExpression()
     boolean()
     numbers()
+    nullable()
 }
 
 fun name() {
@@ -164,4 +165,15 @@ fun numbers() {
     println(intNumber)
     println(intNumber + stringNumber.toInt())
     println(readableNumber)
+}
+
+fun nullable() {
+    val text: String? = null
+
+    if (text != null) {
+        val textLength = text.length
+        println(textLength)
+    } else {
+        println("Text is null")
+    }
 }
