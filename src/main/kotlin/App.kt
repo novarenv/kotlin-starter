@@ -1,9 +1,13 @@
+import java.lang.reflect.Array
+
 fun main() {
     name()
     valvar()
     plus()
     char()
     string()
+    array()
+    function("Novaren Veraldo", 19)
 }
 
 fun name() {
@@ -68,4 +72,34 @@ fun string() {
     """.trimIndent()
 
     println(lines)
+}
+
+fun array() {
+    val array = arrayOf(1, 3, 5, 7)
+    for (i in array) {
+        print("$i ")
+    }
+    print("\n")
+
+    val mixArray = arrayOf(1, 3, 5, 7, "Dicoding", true)
+    for (i in mixArray) {
+        print("$i ")
+    }
+    print("\n")
+
+    val intArray = intArrayOf(1, 3, 5, 7)
+    for (i in intArray) {
+        print("$i ")
+    }
+    print("\n")
+
+    val intArrayLambda = Array(4, { i -> i * i })
+    for (i in intArrayLambda) {
+        print("$i ")
+    }
+    print("\n")
+}
+
+fun function(name:String, age: Int){
+    println("Your name is $name and you are $age years old")
 }
