@@ -15,6 +15,7 @@ fun main() {
     safeCalls()
     elvisOp()
     stringTemplate()
+    enum()
 }
 
 fun name() {
@@ -201,4 +202,33 @@ fun stringTemplate() {
             "is open"
         }}"
     )
+}
+
+fun enum() {
+    val colorRed: Color = Color.RED
+    println(colorRed)
+
+    val colors = Color.values()
+    colors.forEach { color ->
+        println(color)
+    }
+
+    val colorGreen: Color = Color.valueOf("GREEN")
+    println("Color is $colorGreen")
+
+    val enumColors = enumValues<Color>()
+    enumColors.forEach { enumColors ->
+        println(enumColors)
+    }
+
+    val enumColorGreen: Color = Color.valueOf("GREEN")
+    println("Color is $enumColorGreen")
+
+    println("Position GREEN is ${colorGreen.ordinal}")
+
+    when (colorRed) {
+        Color.RED -> println("Color is Red")
+        Color.GREEN -> println("Color is Green")
+        Color.BLUE -> println("Color is Blue")
+    }
 }
