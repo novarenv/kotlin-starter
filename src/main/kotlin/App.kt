@@ -10,6 +10,7 @@ fun main() {
     function("Novaren Veraldo", 19)
     ifExpression()
     boolean()
+    numbers()
 }
 
 fun name() {
@@ -136,9 +137,31 @@ fun boolean() {
     println("Office is closed: $isOpen")
 
     isOpen = now > officeOpen
-    if(!isOpen){
+    if (!isOpen) {
         println("Office is closed")
-    } else{
+    } else {
         print("Office is open")
     }
+    println()
+}
+
+fun numbers() {
+    val maxInt = Int.MAX_VALUE
+    val minInt = Int.MIN_VALUE
+    val overRangeInt = maxInt + 1
+    val numberOne = 29
+    val numberTwo = 10
+    val byteNumber: Byte = 1
+    val intNumber = byteNumber.toInt()
+    val stringNumber = "23"
+    val readableNumber = 1_000_000
+
+    println("Max Int is $maxInt")
+    println("Min Int is $minInt")
+    println("Over range Int is $overRangeInt")
+    println(numberOne + numberTwo)
+    println(numberOne / numberTwo)
+    println(intNumber)
+    println(intNumber + stringNumber.toInt())
+    println(readableNumber)
 }
