@@ -17,6 +17,7 @@ fun main() {
     stringTemplate()
     enum()
     whenExpression()
+    whileExpression()
 }
 
 fun name() {
@@ -280,3 +281,18 @@ fun whenExpression() {
 }
 
 fun getRegisterNumber() = Random.nextInt(100)
+
+fun whileExpression() {
+    var counter = 1
+    while (counter <= 7) {
+        println("Hello World!")
+        counter++
+    }
+    println()
+
+    counter = 1
+    do {
+        println("Hello World!")
+        counter++
+    } while (counter <= 7)
+}
